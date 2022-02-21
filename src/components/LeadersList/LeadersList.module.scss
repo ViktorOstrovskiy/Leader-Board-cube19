@@ -1,0 +1,36 @@
+.List {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid;
+  margin-bottom: 5px;
+  padding-top: 20px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  height: 20px;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-align: center;
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 23px;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  button {
+    margin-right: 10px;
+  }
+}

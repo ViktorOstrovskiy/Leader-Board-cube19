@@ -1,0 +1,126 @@
+.formItem {
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+
+  &__index {
+    text-align: center;
+    padding: auto;
+    width: 50px;
+    height: 20px;
+    padding-top: 6px;
+  }
+
+  &__name {
+    text-align: center;
+    padding: auto;
+    width: 20%;
+    height: 20px;
+    padding-top: 6px;
+  }
+
+  &__score {
+    text-align: center;
+    padding: auto;
+    width: 20%;
+    height: 20px;
+    padding-top: 6px;
+  }
+  &__rank {
+    text-align: center;
+    padding: auto;
+    width: 20%;
+    height: 20px;
+    padding-top: 6px;
+  }
+
+  &__button {
+    padding-top: 6px;
+    background: none !important;
+    border: none;
+    cursor: pointer;
+
+    &__img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__button:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  &__buttonEdit {
+    background: none !important;
+    border: none;
+    cursor: pointer;
+
+    &__imgEdit {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__buttonEdit:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  &__img {
+    width: 40px;
+    height: 40px;
+    padding-left: 20px;
+    display: block;
+  }
+  &__leadersImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 14px rgb(0, 0, 0);
+  }
+}
+
+.leadersItem__green {
+  text-align: center;
+  padding: auto;
+  width: 20%;
+  height: 20px;
+  padding-top: 6px;
+  color: green;
+  font-size: 16px;
+}
+
+.leadersItem__yellow {
+  text-align: center;
+  padding: auto;
+  width: 20%;
+  height: 20px;
+  padding-top: 6px;
+  color: rgba(255, 187, 0, 0.904);
+  font-size: 16px;
+}
+
+.leadersItem__red {
+  text-align: center;
+  padding: auto;
+  width: 20%;
+  height: 20px;
+  padding-top: 6px;
+  color: red;
+  font-size: 16px;
+}
+
+.buttonEditDelete {
+  width: 20px;
+  height: 20px;
+}

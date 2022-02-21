@@ -1,0 +1,18 @@
+.button {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  border-radius: 6px;
+  height: 41px;
+  cursor: pointer;
+
+  &__violet {
+    color: #ffffff;
+    background-color: #6b59cc;
+    border: #eceef5;
+  }
+
+  &__add:hover {
+    opacity: 0.9;
+  }
+}
