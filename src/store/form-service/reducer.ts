@@ -24,13 +24,13 @@ const reducer = (state = initialState, action: ActionTypes) => {
       leadersAdd[state.currentDay].sort((a, b) => b.score - a.score);
       return {
         ...state,
-        leaders: [...leadersAdd, payload].sort,
+        leaders: [...leadersAdd],
       };
 
     case DELETE_LFORM:
       const leadersDelete = state.leaders;
       const filtered = leadersDelete[state.currentDay].filter(
-        (state) => state.id !== (payload as Leader).id
+        (state) => state.id !== payload
       );
       leadersDelete[state.currentDay] = filtered;
 

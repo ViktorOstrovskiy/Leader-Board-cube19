@@ -41,7 +41,7 @@ export const message = (name: Leader) => {
   };
 };
 
-export const addLeader = (data: Leader[]) => {
+export const addLeader = (data: Leader) => {
   return {
     type: ADD_LFORM,
     payload: data,
