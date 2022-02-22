@@ -6,6 +6,7 @@ import { Button, Input } from "../../shared";
 // styles
 import style from "../LeadersForm/LeadersForm.module.scss";
 import { FC } from "react";
+import { Leader } from "../../core/types";
 
 type LeadersFormProps = {
   leaderValue: {

@@ -8,7 +8,7 @@ import style from "../LeadersBoard/LeadersBoard.module.scss";
 import { ILeadersReducer } from "../../store/form-service/types";
 
 const LeadersBoard = () => {
-  const { leaders, currentDay }: ILeadersReducer = useSelector(
+  const { leaders, currentDay, isFetching }: ILeadersReducer = useSelector(
     (state: any) => state.userValues
   );
 
@@ -61,7 +61,11 @@ const LeadersBoard = () => {
       </div>
 
       <section className={style.scoreboard__section}>
-        <LeadersList leaders={leaders} currentDay={currentDay} />
+        <LeadersList
+          leaders={leaders}
+          currentDay={currentDay}
+          isFetching={isFetching}
+        />
       </section>
     </main>
   );

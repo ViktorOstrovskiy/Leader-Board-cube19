@@ -10,12 +10,15 @@ import {
   PREV_CURRENT_DAY,
   SET_LEADERS_LIST,
   NEW_CURRENT_DAY,
+  TOGGLE_IS_FETCHING,
+  TOGGLE_IS_FETCHING1,
 } from "../action-types";
 
 export const loadLeaders =
   () =>
   async (dispatch: Dispatch): Promise<void> => {
     try {
+      dispatch(toggleIsFetching());
       const { data } = await api.get("starting-state");
       const modifyLeaderList: Leader = data.map((obj: LeaderResponse) => {
         if (!obj.hasOwnProperty("score")) {
@@ -23,6 +26,8 @@ export const loadLeaders =
         }
         return { ...obj, id: nanoid() };
       });
+      dispatch(toggleIsFetching1());
+
       dispatch(setLeadersList(modifyLeaderList));
     } catch (err) {}
   };
@@ -84,5 +89,16 @@ export const prevDay = () => {
 export const nextCurrentDay = () => {
   return {
     type: NEXT_CURRENT_DAY,
+  };
+};
+
+export const toggleIsFetching = () => {
+  return {
+    type: TOGGLE_IS_FETCHING,
+  };
+};
+export const toggleIsFetching1 = () => {
+  return {
+    type: TOGGLE_IS_FETCHING1,
   };
 };

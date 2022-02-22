@@ -7,11 +7,14 @@ import {
   PREV_CURRENT_DAY,
   SET_LEADERS_LIST,
   NEW_CURRENT_DAY,
+  TOGGLE_IS_FETCHING,
+  TOGGLE_IS_FETCHING1,
 } from "../action-types";
 
 export interface ILeadersReducer {
   currentDay: number;
   leaders: Array<Array<Leader>>;
+  isFetching: boolean;
 }
 
 interface IAddLeader {
@@ -48,6 +51,14 @@ interface IPrevDay {
   type: typeof PREV_CURRENT_DAY;
   payload: Leader;
 }
+interface isFetching {
+  type: typeof TOGGLE_IS_FETCHING;
+  payload: boolean;
+}
+interface isFetching1 {
+  type: typeof TOGGLE_IS_FETCHING1;
+  payload: boolean;
+}
 
 export type ActionTypes =
   | IEditLeader
@@ -56,4 +67,6 @@ export type ActionTypes =
   | INewDay
   | ISetleadersList
   | IDeleteLeader
+  | isFetching
+  | isFetching1
   | IAddLeader;

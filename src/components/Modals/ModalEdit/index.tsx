@@ -2,6 +2,7 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { Modal, Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { FC } from "react";
 // components
 import LeadersForm from "../../LeadersForm";
 // functions
@@ -11,7 +12,13 @@ import { MuiModalStyles } from "./muiStyles";
 import cx from "classnames";
 import { Leader } from "../../../core/types";
 
-const ModalEdit = ({ open, handleClose, leaderData }: any) => {
+type ModalEditProps = {
+  open: boolean;
+  handleClose: any;
+  leaderData: any;
+};
+
+const ModalEdit: FC<ModalEditProps> = ({ open, handleClose, leaderData }) => {
   const useStyle = makeStyles(MuiModalStyles);
   const dispatch = useDispatch();
 

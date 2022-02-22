@@ -27,7 +27,7 @@ type LeadersItemProps = {
 };
 
 const LeadersFormItem: FC<LeadersItemProps> = ({ leaderData, index }) => {
-  const { leaders, currentDay }: ILeadersReducer = useSelector(
+  const { leaders, currentDay, isFetching }: ILeadersReducer = useSelector(
     (state: any) => state.userValues
   );
 
@@ -35,7 +35,7 @@ const LeadersFormItem: FC<LeadersItemProps> = ({ leaderData, index }) => {
 
   const rank = index + 1;
 
-  const rankLeaders = () => {
+  const rankLeaders = (): string => {
     switch (rank) {
       case 1:
         return "st";
@@ -75,7 +75,7 @@ const LeadersFormItem: FC<LeadersItemProps> = ({ leaderData, index }) => {
 
   const dispatch = useDispatch();
 
-  const handleClose = () => {
+  const handleClose = (): void => {
     setOpen(false);
   };
   console.log(changeLeaderRank());

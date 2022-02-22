@@ -2,8 +2,24 @@ import * as React from "react";
 import { makeStyles } from "@mui/styles";
 import { Button as MuiButton } from "@mui/material";
 import { MuiButtonStyles } from "./muiStyles";
+import { FC } from "react";
 // styles
 import cx from "classnames";
+
+// type ButtonProps = {
+//   title: any,
+//   clickHandler: any,
+//   startIcon: any,
+//   endIcon: any,
+//   violet: any,
+//   parentClassName: any,
+//   disabled: any,
+//   dark: any,
+//   img: any,
+//   change: any,
+//   type: any
+
+// }
 
 const useStyle = makeStyles(MuiButtonStyles);
 

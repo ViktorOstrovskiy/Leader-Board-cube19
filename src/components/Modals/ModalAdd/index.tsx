@@ -5,6 +5,7 @@ import { Modal, Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { leaderInitialValue } from "./helpers";
 import { Leader } from "../../../core/types";
+import { FC } from "react";
 
 // components
 import LeadersForm from "../../LeadersForm";
@@ -14,12 +15,17 @@ import { addLeader, message } from "../../../store/form-service/actions";
 import cx from "classnames";
 import { MuiModalStyles } from "./muiStyles";
 
-const ModalAdd = ({ open, handleClose }: any) => {
+type ModalAddProps = {
+  open: boolean;
+  handleClose: any;
+};
+
+const ModalAdd: FC<ModalAddProps> = ({ open, handleClose }) => {
   const useStyle = makeStyles(MuiModalStyles);
 
   const dispatch = useDispatch();
 
-  const addLeaderClickHandler = (leaderValue: any) => {
+  const addLeaderClickHandler = (leaderValue: Leader | any) => {
     dispatch(message(leaderValue.name));
     dispatch(addLeader(leaderValue));
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import * as React from "react";
 import { useDispatch } from "react-redux";
+import preloader from "../../assets/img/preloader.svg";
 // components
 import { Button } from "../../shared";
 import LeadersFormItem from "../LeadersFormItem";
@@ -16,15 +17,15 @@ import { loadLeaders } from "../../store/form-service/actions";
 import style from "../LeadersList/LeadersList.module.scss";
 import { ILeadersReducer } from "../../store/form-service/types";
 
-const LeadersList = ({ leaders, currentDay }: ILeadersReducer) => {
+const LeadersList = ({ leaders, currentDay, isFetching }: ILeadersReducer) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadLeaders());
   }, []);
   const [open, setOpen] = useState(false);
 
-  const handleClose = () => setOpen(false);
-  const nextDay = () => {
+  const handleClose = (): boolean => setOpen(false);
+  const nextDay = (): void => {
     if (currentDay !== leaders.length - 1) {
       dispatch(nextCurrentDay());
     }
@@ -39,7 +40,7 @@ const LeadersList = ({ leaders, currentDay }: ILeadersReducer) => {
     }
   };
 
-  const prevDays = () => {
+  const prevDays = (): void => {
     dispatch(prevDay());
   };
 
@@ -76,6 +77,7 @@ const LeadersList = ({ leaders, currentDay }: ILeadersReducer) => {
       </div>
 
       <ul className={style.list}>
+        {isFetching ? <img src={preloader} /> : null}
         {(leaders[currentDay] || []).map((item, index) => (
           <LeadersFormItem key={item.id} leaderData={item} index={index} />
         ))}
