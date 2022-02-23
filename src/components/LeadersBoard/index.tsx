@@ -9,7 +9,7 @@ import { ILeadersReducer } from "../../store/form-service/types";
 
 const LeadersBoard = () => {
   const { leaders, currentDay, isFetching }: ILeadersReducer = useSelector(
-    (state: any) => state.userValues
+    (state: ILeadersReducer) => state.userValues
   );
 
   const filtered = leaders

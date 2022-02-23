@@ -7,8 +7,8 @@ import {
   PREV_CURRENT_DAY,
   SET_LEADERS_LIST,
   NEW_CURRENT_DAY,
-  TOGGLE_IS_FETCHING,
-  TOGGLE_IS_FETCHING1,
+  TRUE_IS_FETCHING,
+  FALSE_IS_FETCHING,
 } from "../action-types";
 import { Leader } from "../../core/types";
 const initialState: ILeadersReducer = {
@@ -79,14 +79,14 @@ const reducer = (state = initialState, action: ActionTypes) => {
         currentDay: state.currentDay + 1,
       };
 
-    case TOGGLE_IS_FETCHING: {
+    case TRUE_IS_FETCHING: {
       return {
         ...state,
         isFetching: true,
       };
     }
 
-    case TOGGLE_IS_FETCHING1: {
+    case FALSE_IS_FETCHING: {
       return {
         ...state,
         isFetching: false,

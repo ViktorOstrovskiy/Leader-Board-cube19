@@ -9,16 +9,8 @@ import { FC } from "react";
 import { Leader } from "../../core/types";
 
 type LeadersFormProps = {
-  leaderValue: {
-    name: string;
-    score: string;
-  };
-  submitClickHandler: any;
-};
-
-const initialValues = {
-  name: "",
-  score: "",
+  leaderValue: Leader;
+  submitClickHandler: (value: Leader) => void;
 };
 
 const validationSchema = Yup.object({
@@ -29,9 +21,7 @@ const validationSchema = Yup.object({
 const LeadersForm: FC<LeadersFormProps> = ({
   leaderValue,
   submitClickHandler,
-}) => {
-  console.log(initialValues);
-
+}: LeadersFormProps) => {
   return (
     <Formik
       initialValues={leaderValue}

@@ -1,4 +1,6 @@
+import * as React from "react";
 import "./App.css";
+
 import LeadersBoard from "./components/LeadersBoard";
 
 function App() {

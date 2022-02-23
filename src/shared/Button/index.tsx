@@ -6,24 +6,23 @@ import { FC } from "react";
 // styles
 import cx from "classnames";
 
-// type ButtonProps = {
-//   title: any,
-//   clickHandler: any,
-//   startIcon: any,
-//   endIcon: any,
-//   violet: any,
-//   parentClassName: any,
-//   disabled: any,
-//   dark: any,
-//   img: any,
-//   change: any,
-//   type: any
-
-// }
+type ButtonProps = {
+  title?: string;
+  clickHandler?: () => void;
+  startIcon?: any;
+  endIcon?: any;
+  violet?: boolean;
+  parentClassName?: boolean;
+  disabled?: boolean;
+  dark?: boolean;
+  img?: boolean;
+  change?: boolean;
+  type?: string;
+};
 
 const useStyle = makeStyles(MuiButtonStyles);
 
-export const Button = ({
+export const Button: FC<ButtonProps> = ({
   title,
   clickHandler,
   startIcon,

@@ -14,15 +14,15 @@ import { Leader } from "../../../core/types";
 
 type ModalEditProps = {
   open: boolean;
-  handleClose: any;
-  leaderData: any;
+  handleClose: () => void;
+  leaderData: Leader;
 };
 
 const ModalEdit: FC<ModalEditProps> = ({ open, handleClose, leaderData }) => {
   const useStyle = makeStyles(MuiModalStyles);
   const dispatch = useDispatch();
 
-  const editLeaderClickHandler = (newValue: Leader) => {
+  const editLeaderClickHandler = (newValue: Leader): void => {
     dispatch(editLeader(newValue));
     handleClose();
   };

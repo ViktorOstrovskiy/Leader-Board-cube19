@@ -7,11 +7,12 @@ import {
   PREV_CURRENT_DAY,
   SET_LEADERS_LIST,
   NEW_CURRENT_DAY,
-  TOGGLE_IS_FETCHING,
-  TOGGLE_IS_FETCHING1,
+  TRUE_IS_FETCHING,
+  FALSE_IS_FETCHING,
 } from "../action-types";
 
 export interface ILeadersReducer {
+  userValues?: any;
   currentDay: number;
   leaders: Array<Array<Leader>>;
   isFetching: boolean;
@@ -52,11 +53,11 @@ interface IPrevDay {
   payload: Leader;
 }
 interface isFetching {
-  type: typeof TOGGLE_IS_FETCHING;
+  type: typeof TRUE_IS_FETCHING;
   payload: boolean;
 }
 interface isFetching1 {
-  type: typeof TOGGLE_IS_FETCHING1;
+  type: typeof FALSE_IS_FETCHING;
   payload: boolean;
 }
 

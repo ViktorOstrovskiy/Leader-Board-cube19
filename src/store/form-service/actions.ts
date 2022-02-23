@@ -10,8 +10,8 @@ import {
   PREV_CURRENT_DAY,
   SET_LEADERS_LIST,
   NEW_CURRENT_DAY,
-  TOGGLE_IS_FETCHING,
-  TOGGLE_IS_FETCHING1,
+  TRUE_IS_FETCHING,
+  FALSE_IS_FETCHING,
 } from "../action-types";
 
 export const loadLeaders =
@@ -32,24 +32,38 @@ export const loadLeaders =
     } catch (err) {}
   };
 
-export const message = (name: Leader) => {
-  return async () => {
+export const message = (leader: { name: string; score: number }) => {
+  return async (dispatch: Dispatch): Promise<void> => {
     try {
-      const data = await api.post("process-user", {
-        username: name,
+      const { data } = await api.post("process-user", {
+        username: leader.name,
       });
 
-      console.log(data);
-    } catch (err) {
-      console.log(err);
+      const leaderToAdd: Leader | any = {
+        name: Object.values(data)[0],
+        score: leader.score,
+        id: nanoid(),
+        rank: 0,
+      };
+      dispatch(addLeader(leaderToAdd));
+      console.log("data", Object.values(data)[0]);
+      console.log("name", leader.name);
+    } catch (err: any) {
+      console.log("eroro", { err });
+
+      if (err.response.status === 500) {
+        dispatch(message(leader));
+      }
+      return Promise.reject(err);
     }
   };
 };
 
-export const addLeader = (data: Leader) => {
+export const addLeader = (leaderToAdd: Leader) => {
+  console.log("DATA", leaderToAdd);
   return {
     type: ADD_LFORM,
-    payload: data,
+    payload: leaderToAdd,
   };
 };
 
@@ -94,11 +108,11 @@ export const nextCurrentDay = () => {
 
 export const toggleIsFetching = () => {
   return {
-    type: TOGGLE_IS_FETCHING,
+    type: TRUE_IS_FETCHING,
   };
 };
 export const toggleIsFetching1 = () => {
   return {
-    type: TOGGLE_IS_FETCHING1,
+    type: FALSE_IS_FETCHING,
   };
 };

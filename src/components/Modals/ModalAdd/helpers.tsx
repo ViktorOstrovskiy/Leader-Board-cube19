@@ -1,1 +1,1 @@
-export const leaderInitialValue = { name: "", score: "" };
+export const leaderInitialValue = { name: "", score: 0, rank: 0 };

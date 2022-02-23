@@ -10,14 +10,14 @@ import { FC } from "react";
 // components
 import LeadersForm from "../../LeadersForm";
 // functions
-import { addLeader, message } from "../../../store/form-service/actions";
+import { message } from "../../../store/form-service/actions";
 // styles
 import cx from "classnames";
 import { MuiModalStyles } from "./muiStyles";
 
 type ModalAddProps = {
   open: boolean;
-  handleClose: any;
+  handleClose: () => void;
 };
 
 const ModalAdd: FC<ModalAddProps> = ({ open, handleClose }) => {
@@ -25,9 +25,8 @@ const ModalAdd: FC<ModalAddProps> = ({ open, handleClose }) => {
 
   const dispatch = useDispatch();
 
-  const addLeaderClickHandler = (leaderValue: Leader | any) => {
-    dispatch(message(leaderValue.name));
-    dispatch(addLeader(leaderValue));
+  const addLeaderClickHandler = (leaderValue: Leader): void => {
+    dispatch(message(leaderValue));
 
     handleClose();
   };

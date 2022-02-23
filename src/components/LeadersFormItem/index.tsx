@@ -16,19 +16,16 @@ import style from "../LeadersFormItem/LeadersFormItem.module.scss";
 import cx from "classnames";
 import { ILeadersReducer } from "../../store/form-service/types";
 import { FC } from "react";
+import { Leader } from "../../core/types";
 
 type LeadersItemProps = {
-  leaderData: {
-    id: string;
-    name: string;
-    score: number;
-  };
+  leaderData: Leader;
   index: number;
 };
 
 const LeadersFormItem: FC<LeadersItemProps> = ({ leaderData, index }) => {
   const { leaders, currentDay, isFetching }: ILeadersReducer = useSelector(
-    (state: any) => state.userValues
+    (state: ILeadersReducer) => state.userValues
   );
 
   const [open, setOpen] = useState(false);

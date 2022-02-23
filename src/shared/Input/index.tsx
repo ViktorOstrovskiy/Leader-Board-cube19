@@ -26,8 +26,6 @@ export const Input: FC<InputProps> = ({ type, placeholder, field }) => {
     form.errors[field.name] &&
     form.touched[field.name] &&
     form.errors[field.name];
-  console.log(error);
-  console.log(field);
 
   return (
     <div>
