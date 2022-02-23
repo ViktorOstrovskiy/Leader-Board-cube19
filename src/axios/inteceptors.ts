@@ -1,5 +1,5 @@
 import instace from "./instance";
-import { loadLeaders, message } from "../store/form-service/actions";
+import { loadLeaders } from "../store/form-service/actions";
 import { ILeadersStore } from "../store/form-service/types";
 
 export default {

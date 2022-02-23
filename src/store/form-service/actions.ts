@@ -34,7 +34,7 @@ export const loadLeaders =
     } catch (err) {}
   };
 
-export const message = (leader: { name: string; score: number }) => {
+export const message = (leader: Leader) => {
   return async (dispatch: Dispatch): Promise<void> => {
     try {
       const { data } = await api.post("process-user", {

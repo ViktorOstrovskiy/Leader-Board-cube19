@@ -22,6 +22,7 @@ export const MuiModalStyles = {
       color: "#000",
       fontWeight: "bold",
       fontSize: 27,
+      background: " white",
     },
   },
 };
