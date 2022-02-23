@@ -1,9 +1,9 @@
 import instace from "./instance";
 import { loadLeaders, message } from "../store/form-service/actions";
-import { Leader } from "../core/types";
+import { ILeadersStore } from "../store/form-service/types";
 
 export default {
-  setupInterceptors: (store: any) => {
+  setupInterceptors: (store: ILeadersStore) => {
     instace.interceptors.response.use(
       (response) => {
         return response;

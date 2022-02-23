@@ -10,6 +10,7 @@ import { editLeader } from "../../../store/form-service/actions";
 // styles
 import { MuiModalStyles } from "./muiStyles";
 import cx from "classnames";
+// type
 import { Leader } from "../../../core/types";
 
 type ModalEditProps = {

@@ -1,4 +1,6 @@
+// type
 import { ActionTypes, ILeadersReducer } from "./types";
+// action-types
 import {
   ADD_LFORM,
   DELETE_LFORM,

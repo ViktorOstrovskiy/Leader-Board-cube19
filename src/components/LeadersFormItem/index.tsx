@@ -2,6 +2,7 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { FC } from "react";
 
 // components
 import { Button } from "../../shared";
@@ -14,8 +15,8 @@ import { deleteUser } from "../../store/form-service/actions";
 // styles
 import style from "../LeadersFormItem/LeadersFormItem.module.scss";
 import cx from "classnames";
+// type
 import { ILeadersReducer } from "../../store/form-service/types";
-import { FC } from "react";
 import { Leader } from "../../core/types";
 
 type LeadersItemProps = {

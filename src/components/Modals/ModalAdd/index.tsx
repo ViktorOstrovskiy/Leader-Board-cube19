@@ -4,9 +4,7 @@ import { useDispatch } from "react-redux";
 import { Modal, Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { leaderInitialValue } from "./helpers";
-import { Leader } from "../../../core/types";
 import { FC } from "react";
-
 // components
 import LeadersForm from "../../LeadersForm";
 // functions
@@ -14,6 +12,8 @@ import { message } from "../../../store/form-service/actions";
 // styles
 import cx from "classnames";
 import { MuiModalStyles } from "./muiStyles";
+// type
+import { Leader } from "../../../core/types";
 
 type ModalAddProps = {
   open: boolean;

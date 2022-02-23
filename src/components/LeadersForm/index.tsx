@@ -1,11 +1,13 @@
 import * as React from "react";
 import { Form, Formik, Field } from "formik";
 import * as Yup from "yup";
+import { FC } from "react";
+
 // components
 import { Button, Input } from "../../shared";
 // styles
 import style from "../LeadersForm/LeadersForm.module.scss";
-import { FC } from "react";
+// type
 import { Leader } from "../../core/types";
 
 type LeadersFormProps = {

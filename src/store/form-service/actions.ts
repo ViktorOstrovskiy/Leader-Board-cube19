@@ -1,7 +1,9 @@
 import { nanoid } from "nanoid";
 import { Dispatch } from "react";
 import api from "../../axios/instance";
+// type
 import { Leader, LeaderResponse } from "../../core/types";
+// action-types
 import {
   ADD_LFORM,
   DELETE_LFORM,

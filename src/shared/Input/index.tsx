@@ -3,7 +3,7 @@ import { FC } from "react";
 import { makeStyles } from "@mui/styles";
 import { Input as MuiInput } from "@mui/material";
 import { MuiInputStyles } from "./muiStyles";
-import { FieldInputProps, FieldProps, useFormikContext } from "formik";
+import { FieldInputProps, useFormikContext } from "formik";
 // styles
 import s from "./Input.module.scss";
 import cx from "classnames";

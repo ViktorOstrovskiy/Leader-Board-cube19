@@ -1,4 +1,7 @@
+import { Dispatch } from "react";
+// type
 import { Leader } from "../../core/types";
+// action-types
 import {
   ADD_LFORM,
   DELETE_LFORM,
@@ -16,6 +19,9 @@ export interface ILeadersReducer {
   currentDay: number;
   leaders: Array<Array<Leader>>;
   isFetching: boolean;
+}
+export interface ILeadersStore {
+  dispatch: Dispatch;
 }
 
 interface IAddLeader {

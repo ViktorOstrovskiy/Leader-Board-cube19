@@ -15,6 +15,7 @@ import {
 import { loadLeaders } from "../../store/form-service/actions";
 // styles
 import style from "../LeadersList/LeadersList.module.scss";
+// type
 import { ILeadersReducer } from "../../store/form-service/types";
 
 const LeadersList = ({ leaders, currentDay, isFetching }: ILeadersReducer) => {
